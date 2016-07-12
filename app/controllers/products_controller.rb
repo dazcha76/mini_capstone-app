@@ -20,6 +20,11 @@ class ProductsController < ApplicationController
     render 'create.html.erb'
   end
 
+  def show
+    @product = Wardrobe.find_by(id: params['id'])
+    render 'show.html.erb'
+  end
+
   def edit
     @product = Wardrobe.find_by(id: params['id'])
     render 'edit.html.erb'
@@ -37,8 +42,10 @@ class ProductsController < ApplicationController
     render 'update.html.erb'
   end
 
-  def show
+  def destroy
     @product = Wardrobe.find_by(id: params['id'])
-    render 'show.html.erb'
+    @product.destroy
+    render 'delete.html.erb'
   end
+
 end
