@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/*/
 
 body {
+	color: red;
    background-image: image-url("stars.gif");
  }
 
@@ -10,6 +11,14 @@ h1, h2, h3 {
   color: red;
 }
 
-h1 {
+h1, h3 {
   text-align: center;
 }
+
+img {
+	display: block;
+	margin: 0 auto;
+	height: 200px;
+	width: 150px;
+}
+
