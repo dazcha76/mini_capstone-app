@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='https://fonts.googleapis.com/css?family=Akronim' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -19,19 +20,40 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Brand</a>
+      <a class="navbar-brand" href="#">Wonder <br> Wardrobe</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Add a Product</a></li>
+        <li><a href="#">Item of the Day<span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Clearance Items</a></li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sort by  <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/products?sort=name">Superhero</a></li>
+            <li><a href="/products?sort=price&sort_order=asc">Lowest to Highest</a></li>
+            <li><a href="/products?sort=price&sort_order=desc">Highest to Lowest</a></li>
+          </ul>
+        </li>
+      </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 
 <div class="container">
+
+<% flash.each do |name, message| %>
+  <p> <%= message %> </p>
+<% end %> 
 
 <%= yield %>
 

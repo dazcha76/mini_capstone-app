@@ -15,10 +15,20 @@ h1, h3 {
   text-align: center;
 }
 
+h1 {
+	font-family: 'Akronim', cursive;
+	font-size: 8em;
+}
+
 img {
 	display: block;
 	margin: 0 auto;
 	height: 200px;
 	width: 150px;
+}
+
+.navbar-brand {
+	font-family: 'Akronim', cursive;
+	font-size: 2em;
 }
 

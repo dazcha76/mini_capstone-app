@@ -33,3 +33,12 @@ boots = Wardrobe.new(name: "Batman Boots", image: "", price: "50.00", descriptio
 boots.save
 boots = Wardrobe.new(name: "Wonder Woman Boots", image: "", price: "50.00", description: "Red vinyl exterior with a white stripe front and center. It has a side zipper and 3 in heels", size: "7, 8, 9 10")
 boots.save
+
+supplier1 = Supplier.new(name: "Amazonian Accessories", email: "info@aa.com", phone: "847-555-1001")
+supplier1.save
+supplier2 = Supplier.new(name: "Super Stuff", email: "info@ss.com", phone: "847-555-2002")
+supplier2.save
+supplier3 = Supplier.new(name: "Badass Battle Gear", email: "info@bbg.com", phone: "847-555-3003")
+supplier3.save
+
+
