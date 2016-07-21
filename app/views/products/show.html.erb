@@ -1,9 +1,26 @@
 <h2><%= @product.name %></h2>
-<p><img src="<%= @product.image %>" alt="..."></p>
+<h4>Supplied by: <%= @product.supplier.name %></h4>
+<p><img src="<%= @product.images[0].url %>" alt="..."></p>
 <p><%= @product.price %></p>
 <p><%= @product.description %></p>
 <p><%= @product.size %></p>
 <button type="button" class="btn btn-danger">Buy it!</button>
+
+<%= form_tag "/orders", method: :post do %>
+  <div>
+    <%= hidden_field_tag :product_id, @product.id %>
+  </div>
+
+  <div>
+    <%= label_tag :quantity %>
+    <%= text_field_tag :quantity %>
+  </div>
+
+  <div>
+    <%= submit_tag "Buy Now!" %>
+  </div>
+
+<% end %>
 
 <br><br>
 
